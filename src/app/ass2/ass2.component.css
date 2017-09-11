@@ -1,0 +1,20 @@
+.bold{
+    font-weight: bold;
+}
+.brown{
+    color: brown;
+}
+.red{
+    color: red;
+}
+.green{
+    color: green;
+}
+.black{
+    color: black;
+}
+
+.form-control {
+    display: inline-block;
+    width: 98%;
+}

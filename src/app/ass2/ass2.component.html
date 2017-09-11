@@ -1,0 +1,66 @@
+<div class="container">
+    <section id="login">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="form-wrap">
+                    <form novalidate autocomplete="off" [formGroup]="myForm" (ngSubmit)="addCriketer(myForm.value)">
+                        <h3>Reactive Form with <span  class="red bold">(ngSubmit) ,FormControl  &amp; FormGroup </span> - WITH VALIDATION CSS FOR ERROR</h3>
+                        <h4>Add a Cricketer(Player list will come if added player > 0 )</h4>
+                         <h4 class="red bold">All fields are Mandatory</h4>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="FirstName" formControlName="firstName">
+                            <div *ngIf="myForm.controls['firstName'].errors && (myForm.controls['firstName'].dirty || myForm.controls['firstName'].touched)"
+                                class="alert alert-danger">
+                                <div *ngIf="myForm.controls['firstName'].hasError('required')">
+                                    First name is required.
+                                </div>
+                                <div *ngIf="myForm.controls['firstName'].hasError('minlength')">
+                                    Please enter atleast 2 characeters.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="LastName" formControlName="lastName">
+                            <div *ngIf="myForm.controls['lastName'].errors && (myForm.controls['lastName'].dirty || myForm.controls['lastName'].touched)"
+                                class="alert alert-danger">
+                                <div *ngIf="myForm.controls['lastName'].hasError('required')">
+                                    Last name is required.
+                                </div>
+                                <div *ngIf="myForm.controls['lastName'].hasError('minlength')">
+                                    Please enter atleast 2 characeters.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" formControlName="favShot"  class="form-control" placeholder="Favorite Shot">
+                            <div *ngIf="myForm.controls['favShot'].errors && (myForm.controls['favShot'].dirty || myForm.controls['favShot'].touched)"
+                                class="alert alert-danger">
+                                <div *ngIf="myForm.controls['favShot'].hasError('required')">
+                                    Fav Shot is required.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <select class="txt-box" name="playerType" formControlName="playerType" class="form-control">
+                            <option [value]="null" [disabled]="true">Select Option </option>
+                            <option *ngFor="let player of playerType" [ngValue]="player.type">
+                                {{player.type}}
+                            </option>
+                         </select>
+                        </div>
+                        <input type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block" value="Add" [disabled]="myForm.invalid">
+                    </form>
+                    <hr>
+                </div>
+            </div>
+            <!-- /.col-xs-12 -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+</section>
+<div *ngIf="cricketersArray.length > 0">
+    <app-cricketer-ass2 [criketerDetail]="cricketersArray"></app-cricketer-ass2>
+</div>
+</div>

@@ -1,0 +1,32 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{title}}!
+  </h1>
+  <div>
+    <h2 style="color:red;font-weight:bold;">Click on the Sesion links for all the sessions</h2>
+  </div>
+</div>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header"> 
+      <button type="button" class="collapsed navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-9"
+        aria-expanded="false"> 
+        <span class="sr-only">Toggle navigation</span> 
+        <span class="icon-bar"></span> 
+        <span class="icon-bar"></span> 
+        <span class="icon-bar"></span> 
+      </button>      
+        <!--<a href="#" class="navbar-brand"> SESSION7</a> -->
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-9">
+      <ul class="nav navbar-nav">
+        <li routerLinkActive='active'><a [routerLink]="['ass1']">ASSIGNMENT1</a></li>
+        <li routerLinkActive='active'><a [routerLink]="['ass2']">ASSIGNMENT2</a></li>
+        <li routerLinkActive='active'><a [routerLink]="['ass3']">ASSIGNMENT3</a></li>
+        <li routerLinkActive='active'><a [routerLink]="['ass4']">ASSIGNMENT4</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<router-outlet></router-outlet>
